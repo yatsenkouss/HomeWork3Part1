@@ -126,11 +126,16 @@ while index < cart.count {
     Сокет: s1151
     ------------------------------------------------------
  */
-
-
-
-
-
+index = 0
+repeat {
+    var num = index + 1
+    let product = cart[index]
+    print("------------------- \(num) -------------------")
+    print("Назва товару: \(product.0) \nСокет: \(product.3)")
+    print("-------------------------------------------")
+    index += 1
+}
+while index < cart.count
 /*
  
  Розділ 1 - Потік керування
