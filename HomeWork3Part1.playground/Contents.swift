@@ -51,7 +51,6 @@ let cart: [ProductInfo] = [
      Сокет: s1151, Процессор: Intel
     ------------------------------------------------------
  */
-
 for (index, product) in cart.enumerated() {
     var num = index + 1
     print("------------------- \(num) -------------------")
@@ -59,9 +58,6 @@ for (index, product) in cart.enumerated() {
     print("Сокет: \(product.3), Процесор: \(product.4)")
     print("-------------------------------------------")
 }
-
-
-
 /*
  
  Пункт 1.2
@@ -78,11 +74,13 @@ for (index, product) in cart.enumerated() {
      Процессор: Intel
     ------------------------------------------------------
  */
-
-
-
-
-
+var num = 1
+for product in cart {
+    print("------------------- \(num) -------------------")
+    print("Назва товару: \(product.0) \nПроцесор: \(product.4)")
+    print("-------------------------------------------")
+    num += 1
+}
 /*
  
  Пункт 1.3
