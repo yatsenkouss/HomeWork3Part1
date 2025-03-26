@@ -164,8 +164,21 @@ while index < cart.count
     Сокет: s1151
     ------------------------------------------------------
  */
-
-
+num = 0
+index = 0
+while index < cart.count {
+    num = index + 1
+    let product = cart[index]
+    if product.1 < 5000.0 && product.3 == "s1151" {
+        print("------------------- \(num) -------------------")
+        print("Назва товару: \(product.0) \nЦіна: \(product.1) \(product.2)")
+        print("Сокет: \(product.3)")
+        print("-------------------------------------------")
+        index += 1
+    } else {
+        continue
+    }
+}
 
 
 
