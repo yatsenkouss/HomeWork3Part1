@@ -97,7 +97,15 @@ for product in cart {
     Ціна: 1717.00 ₴
     ------------------------------------------------------
  */
-
+var index = 0
+while index < cart.count {
+    var num = index + 1
+    let product = cart[index]
+    print("------------------- \(num) -------------------")
+    print("Назва товару: \(product.0) \nЦіна: \(product.1) \(product.2)")
+    print("-------------------------------------------")
+    index += 1
+}
 
 
 
