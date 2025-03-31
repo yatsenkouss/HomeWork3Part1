@@ -325,11 +325,29 @@ showIntelNoParam()
  !! не забудьте перевірити роботу функції викликавши її з максимальним значенням на свій розсуд для перевірки
  
  */
-
-
-
-
-
+func showPosibleMaxPrice(maxPrice: Double) {
+    var index = 0
+    var num = 1
+    print("----------- Товари з ціною менше \(maxPrice)₴ -----------")
+    while index < cart.count {
+        let product = cart[index]
+        if product.1 <= maxPrice {
+            print("\(num) Назва товару: \(product.1) \(product.2)")
+            index += 1
+            num += 1
+        }
+        else {
+            index += 1
+        }
+    }
+    if num == 1 {
+        print("Товари з такою максимальною ціною відсутні")
+        print("--------------------------------------------------")
+    } else {
+        print("--------------------------------------------------")
+    }
+}
+showPosibleMaxPrice(maxPrice: 5000)
 
 /*
  
