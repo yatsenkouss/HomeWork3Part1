@@ -432,10 +432,15 @@ expensiveProdByProc(processor:"AMD")
  
  */
 
+enum nameProcessorType: String {
+    case intel = "Intel"
+    case amd = "AMD"
+}
 
-
-
-
+var processor: nameProcessorType = nameProcessorType.amd
+print("Значення змінної через enum: \(processor.rawValue)")
+processor = .intel
+print("Значення змінено на: \(processor.rawValue)")
 
 /*
  
