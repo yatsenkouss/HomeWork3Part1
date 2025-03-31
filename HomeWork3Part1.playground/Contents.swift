@@ -164,6 +164,7 @@ while index < cart.count
     Сокет: s1151
     ------------------------------------------------------
  */
+
 num = 0
 index = 0
 while index < cart.count {
@@ -176,11 +177,9 @@ while index < cart.count {
         print("-------------------------------------------")
         index += 1
     } else {
-        continue
+        index += 1
     }
 }
-
-
 
 /*
  
@@ -225,7 +224,27 @@ while index < cart.count {
      }
     
  */
-
+index = 0
+while index < cart.count {
+    var num = index + 1
+    let product = cart[index]
+    let processorStringValue = product.4
+    switch processorStringValue {
+    case "Intel":
+        print("------------------- \(num) -------------------")
+        print("Процесор: \(product.4)")
+        print("Назва товару: \(product.0) \nЦіна: \(product.1) \(product.2)")
+        print("-------------------------------------------")
+    case "AMD":
+        print("------------------- \(num) -------------------")
+        print("Процесор: \(product.4)")
+        print("Назва товару: \(product.0) \nЦіна: \(product.1) \(product.2)")
+        print("-------------------------------------------")
+    default:
+        print("")
+    }
+    index += 1
+}
 
 
 /*
