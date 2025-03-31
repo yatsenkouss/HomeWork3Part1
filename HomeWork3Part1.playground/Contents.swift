@@ -485,10 +485,16 @@ print("Валюта після змін: \(cash.rawValue)")
  
  */
 
+struct nameMotherBoard {
+    var socet: String = "s1151"
+    var processor: nameProcessorType = .amd
+}
 
-
-
-
+var MotherBoard: nameMotherBoard = nameMotherBoard()
+print("Значення змінних до зміни:\nprocessor - \(MotherBoard.processor.rawValue)\nsocet - \(MotherBoard.socet)")
+MotherBoard.socet = "i8878"
+MotherBoard.processor = .intel
+print("Значення змінних після зміни:\nprocessor - \(MotherBoard.processor.rawValue)\nsocet - \(MotherBoard.socet)")
 
 /*
  
