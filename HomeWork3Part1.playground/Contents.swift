@@ -455,9 +455,16 @@ print("Значення змінено на: \(processor.rawValue)")
  
  */
 
+enum Currency: String {
+    case uah = "UAH"
+    case usd = "USD"
+    case eur = "EUR"
+}
 
-
-
+var cash: Currency = .uah
+print("Поточна валюта: \(cash.rawValue)")
+cash = .usd
+print("Валюта після змін: \(cash.rawValue)")
 
 /*
  
