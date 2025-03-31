@@ -282,7 +282,18 @@ while index < cart.count {
  !! не забудьте перевірити роботу функції викликавши її
  
  */
-
+func showIntelNoParam() {
+    var index = 0
+    print("----------------- Inetel ----------------------------")
+    while index < cart.count {
+        var num = index + 1
+        let product = cart[index]
+        print("\(num) Назва товару: \(product.0)")
+        index += 1
+    }
+    print("--------------------------------------------------")
+}
+showIntelNoParam()
 
 
 
