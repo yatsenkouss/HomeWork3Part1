@@ -371,8 +371,47 @@ showPosibleMaxPrice(maxPrice: 5000)
  
  */
 
+func expensiveProdByProc (processor: String) {
+    index = 0
+    var prod = ""
+    var maxPrice = 0.0
+    while index < cart.count {
+        let product = cart[index]
+        switch processor {
+        case "Intel":
+            if maxPrice < product.1 && product.4 == processor {
+                maxPrice = product.1
+                index += 1
+            }
+            else {
+                index += 1
+                }
+        case "AMD":
+            if maxPrice < product.1 && product.4 == processor {
+                maxPrice = product.1
+                index += 1
+            }
+            else {
+                index += 1
+            }
+        default:
+            print("Товару з таким процесором немає в наявності")
+        }
+    }
+    index = 0
+    while index < cart.count {
+        let product = cart[index]
+        if product.1 == maxPrice {
+            prod = product.0
+        }
+        index += 1
+    }
+    print("------------------- Найдорожчий товар за процесором \(processor) ---------------------------")
+    print("Назва товару: \(prod) Ціна: \(maxPrice) ₴")
+    print("-----------------------------------------------------------------------------------------")
+}
 
-
+expensiveProdByProc(processor:"AMD")
 
 
 /*
