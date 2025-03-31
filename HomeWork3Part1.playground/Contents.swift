@@ -51,6 +51,8 @@ let cart: [ProductInfo] = [
      Сокет: s1151, Процессор: Intel
     ------------------------------------------------------
  */
+
+print("\n1.1\n")
 for (index, product) in cart.enumerated() {
     var num = index + 1
     print("------------------- \(num) -------------------")
@@ -74,6 +76,8 @@ for (index, product) in cart.enumerated() {
      Процессор: Intel
     ------------------------------------------------------
  */
+
+print("\n1.2\n")
 var num = 1
 for product in cart {
     print("------------------- \(num) -------------------")
@@ -97,6 +101,8 @@ for product in cart {
     Ціна: 1717.00 ₴
     ------------------------------------------------------
  */
+
+print("\n1.3\n")
 var index = 0
 while index < cart.count {
     var num = index + 1
@@ -126,6 +132,8 @@ while index < cart.count {
     Сокет: s1151
     ------------------------------------------------------
  */
+
+print("\n1.4\n")
 index = 0
 repeat {
     var num = index + 1
@@ -165,6 +173,7 @@ while index < cart.count
     ------------------------------------------------------
  */
 
+print("\n1.5\n")
 num = 0
 index = 0
 while index < cart.count {
@@ -224,6 +233,8 @@ while index < cart.count {
      }
     
  */
+
+print("\n1.6\n")
 index = 0
 while index < cart.count {
     var num = index + 1
@@ -282,14 +293,22 @@ while index < cart.count {
  !! не забудьте перевірити роботу функції викликавши її
  
  */
+
+print("\n2.1\n")
 func showIntelNoParam() {
     var index = 0
-    print("----------------- Inetel ----------------------------")
+    var num = 1
+    print("----------------- Intel ----------------------------")
     while index < cart.count {
-        var num = index + 1
         let product = cart[index]
-        print("\(num) Назва товару: \(product.0)")
-        index += 1
+        if product.4 == "Intel" {
+            print("\(num) Назва товару: \(product.0)")
+            num += 1
+            index += 1
+        }
+        else {
+            index += 1
+        }
     }
     print("--------------------------------------------------")
 }
@@ -325,6 +344,8 @@ showIntelNoParam()
  !! не забудьте перевірити роботу функції викликавши її з максимальним значенням на свій розсуд для перевірки
  
  */
+
+print("\n2.2\n")
 func showPosibleMaxPrice(maxPrice: Double) {
     var index = 0
     var num = 1
@@ -370,6 +391,8 @@ showPosibleMaxPrice(maxPrice: 5000)
      -----------------------------------------------------------------------------------------
  
  */
+
+print("\n2.3\n")
 
 func expensiveProdByProc (processor: String) {
     index = 0
@@ -432,6 +455,8 @@ expensiveProdByProc(processor:"AMD")
  
  */
 
+print("\n3.1\n")
+
 enum nameProcessorType: String {
     case intel = "Intel"
     case amd = "AMD"
@@ -454,6 +479,7 @@ print("Значення змінено на: \(processor.rawValue)")
  створити змінну типу створенного enum з якимось із значень
  
  */
+print("\n3.2\n")
 
 enum Currency: String {
     case uah = "UAH"
@@ -484,6 +510,7 @@ print("Валюта після змін: \(cash.rawValue)")
  створити змінну типу MotherBoard і спробувати поміняти їй інші значення
  
  */
+print("\n4.1\n")
 
 struct nameMotherBoard {
     var socet: String = "s1151"
@@ -510,8 +537,23 @@ print("Значення змінних після зміни:\nprocessor - \(Mot
  створити змінну типу Product і спробувати поміняти їй інші значення
  
  */
+print("\n4.2\n")
 
+class Product {
+    var name: String = "Key"
+    var price: Double = 50
+    var currency: Currency = .usd
+    var motherBoard: nameMotherBoard = nameMotherBoard()
+}
 
+var product2: Product = Product()
 
+print("Значення змінних до зміни:\nname - \(product2.name)\nprice - \(product2.price)\ncurrency - \(product2.currency.rawValue)\nprocessor - \(product2.motherBoard.processor.rawValue)\nsocet - \(product2.motherBoard.socet)")
 
+product2.name = "Cat"
+product2.price = 88
+product2.currency = .eur
+product2.motherBoard.processor = .intel
+product2.motherBoard.socet = "aa5650"
 
+print("Значення змінних після зміни:\nname - \(product2.name)\nprice - \(product2.price)\ncurrency - \(product2.currency.rawValue)\nprocessor - \(product2.motherBoard.processor.rawValue)\nsocet - \(product2.motherBoard.socet)")
